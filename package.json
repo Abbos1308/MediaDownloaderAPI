@@ -4,14 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ytmusic-api": "^5.2.1",
     "@ernestoyoofi/yt.loader-to": "^1.5.0-release",
     "@tobyg74/tiktok-api-dl": "^1.0.13",
     "@types/node": "^18.0.6",
@@ -22,6 +20,11 @@
     "node-fetch": "^3.2.6",
     "scraper-instagram": "^1.0.17",
     "tiktok-downloader": "^0.0.4",
-    "vz-tiktok-downloader": "^2.2.5"
+    "tiktok-scraper": "^1.4.36",
+    "ttsave": "^1.1.1",
+    "vz-tiktok-downloader": "^2.2.5",
+    "ytdl-core": "^4.11.5",
+    "ytmusic_api_unofficial": "^1.2.4",
+    "ytmusic-api": "^5.2.1"
   }
 }
