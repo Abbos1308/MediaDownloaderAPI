@@ -23,6 +23,7 @@ app.get("/yt_music",(req,res)=> {
     searchManager.search(q, 'VIDEO').then((result) => {
         const id = result[0].id;
         const song_id = result[0].id;
-        res.json({"url":"https://www.youtube.com/watch?v="+song_id})
-)};
+        res.json({"url":"https://www.youtube.com/watch?v="+song_id});
+    });
+});
 
