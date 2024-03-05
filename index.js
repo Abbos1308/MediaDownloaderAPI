@@ -22,7 +22,7 @@ app.get("/yt_music", (req, res) => {
     const q = req.query.q;
     searchManager.search(q, 'MUSIC').then((result) => {
       //console.log(result[0])
-        const links = result.map(item => ({ url: "https://www.youtube.com/watch?v=" +item.id }));
+        const links = result.map(item => ({ url: "https://www.youtube.com/watch?v=" +item.id , title : item.title}));
         res.send(links);
     }).catch(err => {
         console.error("Error occurred while searching:", err);
