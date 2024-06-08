@@ -29,8 +29,8 @@ app.get("/yt_music", (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
+const host = '0.0.0.0'; // Express.js ilovangizni barcha manbalardan qabul qilish uchun
 
-// Listen on `port` and 0.0.0.0
-app.listen(port, "0.0.0.0", function () {
-  // ...
+app.listen(port, host, () => {
+  console.log(`Server is running on http://${host}:${port}`);
 });
