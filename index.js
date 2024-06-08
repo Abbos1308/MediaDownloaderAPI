@@ -16,7 +16,7 @@ app.get("/instagram/", (req, res) => {
       res.json(result);
     })
     .catch((error) => {
-      console.error("Error occurred while fetching Instagram data:", error);
+      console.error("Error occurred while fetching Instagram data: ", link ,  error);
       res.status(500).json({ error: "An error occurred while fetching Instagram data" });
     });
 });
