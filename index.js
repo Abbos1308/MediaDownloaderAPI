@@ -13,7 +13,8 @@ app.get("/instagram/", (req, res) => {
   console.log(link);
   ig(link)
     .then((result) => {
-      res.json(result);
+      res.text(result)
+      //res.json(result);
     })
     .catch((error) => {
       console.error("Error occurred while fetching Instagram data: ", link ,  error);
