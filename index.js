@@ -1,35 +1,40 @@
 const express = require("express");
 const app = express();
-const {searchManager,downloadManager} = require('ytmusic_api_unofficial')
+const ig = require("ig-unduh");
+const { searchManager } = require('ytmusic_api_unofficial');
 
 app.get("/", (req, res) => {
-  res.send("This is API for download any media from social networks");
+  res.send("This is API for downloading media from social networks");
 });
 
-// Instagram part
-app.get("/instagram/", (req, res) => {
-  const ig = require("ig-unduh");
-  link = req.query.link;
-  ig(link).then((result) => {
-    res.json(result);
-  });
+// Instagram route
+app.get("/instagram", (req, res) => {
+  const link = req.query.link;
+  ig(link)
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      console.error("Error occurred while fetching Instagram data:", error);
+      res.status(500).json({ error: "An error occurred while fetching Instagram data" });
+    });
 });
 
-
-
-
+// YouTube Music route
 app.get("/yt_music", (req, res) => {
-    const q = req.query.q;
-    searchManager.search(q, 'MUSIC').then((result) => {
-        res.json(result);
-    }).catch(err => {
-        console.error("Error occurred while searching:", err);
-        res.status(500).send("An error occurred while searching.");
+  const q = req.query.q;
+  searchManager.search(q, 'MUSIC')
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((error) => {
+      console.error("Error occurred while searching YouTube Music:", error);
+      res.status(500).json({ error: "An error occurred while searching YouTube Music" });
     });
 });
 
 const port = process.env.PORT || 3000;
-const host = '0.0.0.0'; // Express.js ilovangizni barcha manbalardan qabul qilish uchun
+const host = '0.0.0.0';
 
 app.listen(port, host, () => {
   console.log(`Server is running on http://${host}:${port}`);
