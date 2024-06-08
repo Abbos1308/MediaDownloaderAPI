@@ -10,6 +10,7 @@ app.get("/", (req, res) => {
 // Instagram route
 app.get("/instagram", (req, res) => {
   const link = req.query.link;
+  console.log(link);
   ig(link)
     .then((result) => {
       res.json(result);
