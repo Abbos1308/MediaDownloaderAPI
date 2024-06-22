@@ -10,6 +10,7 @@ app.get("/", (req, res) => {
 // Instagram route
 app.get("/instagram/", (req, res) => {
   const ig = require("snapsave-downloader-itj");
+  link = req.query.link;
   console.log(link);
   ig(link)
     .then((result) => {
