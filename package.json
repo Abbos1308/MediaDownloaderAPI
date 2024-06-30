@@ -28,6 +28,7 @@
     "vz-tiktok-downloader": "^2.2.5",
     "ytdl-core": "^4.11.5",
     "ytmusic_api_unofficial": "^1.2.4",
-    "ytmusic-api": "^5.2.1"
+    "ytmusic-api": "^5.2.1",
+    "tiktokmediasaver": "^1.2.0"
   }
 }
