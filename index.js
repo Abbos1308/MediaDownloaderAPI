@@ -29,9 +29,8 @@ app.get("/tiktok", (req, res) => {
   const link = req.query.link;
   const Tiktok = require("tiktokmediasaver")
 
-  const tiktok_url = "https://www.tiktok.com/@defnite_ilm_2812/video/7362467772422425861?is_from_webapp=1&sender_device=mobile&sender_web_id=7384300034148582945"
-
-  Tiktok.Downloader(tiktok_url, {
+  
+  Tiktok.Downloader(link, {
     version: "v2" //  version: "v1" | "v2" | "v3"
   }).then((result) => {
     res.json(result);
