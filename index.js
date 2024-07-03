@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
   res.send("This is API for downloading media from social networks");
 });
 
-// Instagram route
+// Instagram and Facebook route
 app.get("/instagram/", (req, res) => {
   const ig = require("snapsave-downloader-itj");
   link = req.query.link;
@@ -24,7 +24,7 @@ app.get("/instagram/", (req, res) => {
     });
 });
 
-// YouTube Music route
+// Tiktok route
 app.get("/tiktok", (req, res) => {
   const link = req.query.link;
   const Tiktok = require("tiktokmediasaver")
@@ -36,6 +36,16 @@ app.get("/tiktok", (req, res) => {
     res.json(result);
   })
 });
+
+// Pinterest route
+app.get("/pin", (req, res) => {
+  const link = req.query.link;
+  const { pinterestdl } = require('pinterest-saver');
+  (async () => {
+    res.json(await pinterestdl(link));
+  })();
+});
+
 
 const port = process.env.PORT || 3000;
 const host = '0.0.0.0';
